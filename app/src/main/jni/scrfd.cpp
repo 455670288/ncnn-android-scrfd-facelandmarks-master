@@ -286,6 +286,7 @@ int SCRFD::load(AAssetManager* mgr, const char* modeltype, bool use_gpu)
 
     // 加载关键点模型设置
     landmarks.opt = ncnn::Option();
+    //landmarks.opt.use_vulkan_compute = true;
     landmarks.opt.num_threads = ncnn::get_big_cpu_count();
     landmarks.load_param(mgr,"2d106det_change.param"); //加载关键点模型权重
     landmarks.load_model(mgr,"2d106det_change.bin");
